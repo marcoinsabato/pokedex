@@ -1,0 +1,159 @@
+:root {
+    --dark-blue : #0A285F;
+    --main-blue : #0075BE;
+    --main-yellow : #FFCC00;
+    --dark-yellow :  #D5A100;
+}
+
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    background: #2A304F;
+    background: linear-gradient(to top, #383b4d, #2A304F);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tc-main-yellow {
+    color: var(--main-yellow);
+}
+
+.btn-detail {
+    background: var(--main-yellow);
+    border-radius: 30px;
+    /* color: white; */
+    font-weight: bold;
+    padding: 8px 32px;
+    box-shadow:0 0 6px var(--main-yellow);
+}
+
+#loading-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+
+#loading-container.loaded {
+    opacity: 0;
+    z-index: -1000;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 200px;
+    border-top: solid 5px var(--main-yellow);
+    border-radius: 100px;
+    animation-name : rotate;
+    animation-duration : 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+  /* Track */
+::-webkit-scrollbar-track {
+    /* background: linear-gradient(to top, #2c2b2e, #16141b); */
+    background : rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 50px;
+}
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--main-yellow);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow:0 0 6px var(--main-yellow);
+
+}
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(94, 93, 93);
+}
+
+.main-container {
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: solid 2px var(--main-yellow);
+    border-radius: 10px;
+    box-shadow:0 0 6px var(--main-yellow);
+    display: flex;
+}
+
+.menu {
+    /* width: 200px; */
+
+}
+
+.poke-card {
+    background: #343C63;
+    border-radius: 40px;
+    position: relative;
+    margin-top: 130px;
+    margin-bottom: 50px;
+    padding: 80px 30px 30px 30px;
+    color: white;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.poke-card .img-container {
+    background: linear-gradient(
+      to bottom,
+      rgba(214, 214, 214, 0.3),
+      rgba(77, 77, 77, 0)
+    );
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    box-shadow: 0 0 10px 10px rgba(202, 201, 201, 0.05);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.type-icon {
+  /* right: 0.3rem;
+  top: 0.3rem; */
+  padding: 0.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #f1f1f1;
+  border-radius: 1000px;
+  cursor: help;
+}
+
+.poke-card .details-link {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
